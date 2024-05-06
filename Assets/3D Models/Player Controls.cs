@@ -37,8 +37,8 @@ public class PlayerControls : MonoBehaviour{
         if (Input.GetButtonDown("Jump") && (grounded == true))
         {
             playerRb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
-            jumpforce++;
-        }
+            
+        } 
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -46,6 +46,7 @@ public class PlayerControls : MonoBehaviour{
         if (collision.gameObject.CompareTag("Platform"))
         {
             grounded = true;
+            jumpforce++;
         }
     }
 

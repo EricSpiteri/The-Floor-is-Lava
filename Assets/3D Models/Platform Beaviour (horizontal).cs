@@ -1,10 +1,14 @@
 using UnityEngine;
+using System;
+using Random = System.Random;
 
 public class MovingPlatform : MonoBehaviour
 {
+   static Random rand = new Random(DateTime.Now.Ticks.GetHashCode());
+    
     public float moveSpeed = 8f; // Speed at which the platform moves
-    public float minX = 0;
-    public float maxX = 10; // Minimum and maximum X positions
+    public float minX = (float)(rand.NextDouble()*8 - 10);
+    public float maxX = (float)(rand.NextDouble()*8 - 0); // Minimum and maximum X positions, randomly generated
 
     private bool movingRight = true;
     private Rigidbody platformRb;

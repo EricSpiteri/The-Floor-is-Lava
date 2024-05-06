@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Unity-Prototype-HERE-IT-IS-main.sln"
+    "dotnet.defaultSolution": "Unity-Prototype 16.04.2024.sln"
 }

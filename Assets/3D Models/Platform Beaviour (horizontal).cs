@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
+
+    public ScoreManager scoreManager;
     public float moveSpeed;
     public float minX;
     public float maxX;  // Minimum and maximum X positions, randomly generated
@@ -10,7 +12,6 @@ public class MovingPlatform : MonoBehaviour
     private bool movingRight = true;
     private bool movingDown = false;
     private Rigidbody platformRb;
-
     private Vector3 lastPosition; // The position before the platform was updated
     private Vector3 lastMove; // The number of units moved between updates
     private float timer;
@@ -77,6 +78,7 @@ public class MovingPlatform : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         timer = 0;
+        scoreManager.AddPoint();
         
 
     }

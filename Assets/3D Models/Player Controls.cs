@@ -10,7 +10,7 @@ public class PlayerControls : MonoBehaviour{
 
     //declaring RigidBody
     private Rigidbody playerRb;
-    bool grounded;
+    public static bool Grounded;
 
     //intitialising
 
@@ -30,7 +30,7 @@ public class PlayerControls : MonoBehaviour{
         float horizontal = Input.GetAxisRaw("Horizontal");
 
         Vector3 direction = Vector3.zero;
-        if (grounded == true)
+        if (Grounded == true)
         {
             direction = new Vector3(horizontal, 0, vertical).normalized * speed;
         }
@@ -41,7 +41,7 @@ public class PlayerControls : MonoBehaviour{
         playerRb.velocity = direction;
 
         //Jump Mechanic
-        if (Input.GetButtonDown("Jump") && (grounded == true))
+        if (Input.GetButtonDown("Jump") && (Grounded == true))
         {
             playerRb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
             
@@ -53,7 +53,7 @@ public class PlayerControls : MonoBehaviour{
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
-            grounded = true;
+            Grounded = true;
             MovingPlatform.SpeedModifier = 0;
             jumpforce+=1.5f;
         }
@@ -63,8 +63,9 @@ public class PlayerControls : MonoBehaviour{
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
-            grounded = false;
-            MovingPlatform.SpeedModifier = -5;
+            Grounded = false;
+            MovingPlatform.SpeedModifier = -3;
+
         }
     }
 }

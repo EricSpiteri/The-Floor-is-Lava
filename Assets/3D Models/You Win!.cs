@@ -15,7 +15,8 @@ public class Winning : MonoBehaviour// used to attach a script to a game object
         {
 
             Debug.Log("You Win!");
-            Time.timeScale = 0;
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex);
         }
     }
 }

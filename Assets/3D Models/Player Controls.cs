@@ -25,10 +25,17 @@ public class PlayerControls : MonoBehaviour{
 
     void Update()
     {
-
+  
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
-        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized * speed;
+
+        Vector3 direction = Vector3.zero;
+        if (grounded == true)
+        {
+            direction = new Vector3(horizontal, 0, vertical).normalized * speed;
+        }
+        else { direction = new Vector3(horizontal, 0, vertical).normalized * speed*0.5f; }
+        
         direction.y = playerRb.velocity.y;
 
         playerRb.velocity = direction;
@@ -38,6 +45,7 @@ public class PlayerControls : MonoBehaviour{
         {
             playerRb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
             
+            
         } 
     }
 
@@ -46,7 +54,8 @@ public class PlayerControls : MonoBehaviour{
         if (collision.gameObject.CompareTag("Platform"))
         {
             grounded = true;
-            jumpforce++;
+            MovingPlatform.SpeedModifier = 0;
+            jumpforce+=1.5f;
         }
     }
 
@@ -55,6 +64,7 @@ public class PlayerControls : MonoBehaviour{
         if (collision.gameObject.CompareTag("Platform"))
         {
             grounded = false;
+            MovingPlatform.SpeedModifier = -5;
         }
     }
 }

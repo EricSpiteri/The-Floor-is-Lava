@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LavaDeath : MonoBehaviour// used to attach a script to a game object
 {
@@ -14,7 +15,8 @@ public class LavaDeath : MonoBehaviour// used to attach a script to a game objec
         {
 
             Debug.Log("You Died");
-            Time.timeScale = 0;
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex);
         }
     }
 }

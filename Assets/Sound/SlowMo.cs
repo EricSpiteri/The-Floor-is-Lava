@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jump : MonoBehaviour
+public class SlowMo : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public AudioSource soundPlayer;
     void Start()
     {
         
@@ -13,6 +15,7 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(PlayerControls.Grounded==true){soundPlayer.Play();}
     }
+
 }

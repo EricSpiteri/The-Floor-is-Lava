@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,10 +16,12 @@ public class Winning : MonoBehaviour// used to attach a script to a game object
        
         if (other.CompareTag("Player"))
         {
+            PlayerControls Controls = other.GetComponent<PlayerControls>();
+            Controls.ResetPosition();
 
-            Debug.Log("You Win!");
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
+            Debug.Log("You Win");
+            
+ 
             
             
             

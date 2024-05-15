@@ -9,7 +9,9 @@ public class PlayerControls : MonoBehaviour{
     //declaring physics variables and assigning their values
     public float speed = 8;
     public float jumpforce = 15;
+    public float CurrentJumpforce;
      public int points = 1;
+    Vector3 StartingPosition;
 
      private AudioSource source;
 
@@ -26,7 +28,15 @@ public class PlayerControls : MonoBehaviour{
         //fetching Rigidbody
         playerRb = GetComponent <Rigidbody> ();
         source = GetComponent<AudioSource>();
+        StartingPosition = playerRb.position;
+        CurrentJumpforce = jumpforce;
 
+    }
+
+    public void ResetPosition()
+    {
+        playerRb.MovePosition(StartingPosition);
+        CurrentJumpforce = jumpforce;
     }
 
     //what happens after initialisation
@@ -51,7 +61,7 @@ public class PlayerControls : MonoBehaviour{
         //Jump Mechanic
         if (Input.GetButtonDown("Jump") && (Grounded == true))
         {
-            playerRb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * CurrentJumpforce, ForceMode.Impulse);
             source.Play();
             
             
@@ -60,20 +70,30 @@ public class PlayerControls : MonoBehaviour{
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             Grounded = true;
+        }
+
+        if (collision.gameObject.CompareTag("Platform"))
+        {
             MovingPlatform.SpeedModifier = 0;
-            jumpforce+=1.5f;
+            CurrentJumpforce+=1.5f;
             FindObjectOfType<ScoreManager>().IncrementScore(points);
         }
     }
 
+  
+
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             Grounded = false;
+        }
+
+        if (collision.gameObject.CompareTag("Platform"))
+        {
             MovingPlatform.SpeedModifier = -3;
             
 

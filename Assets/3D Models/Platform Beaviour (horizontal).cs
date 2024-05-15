@@ -16,13 +16,16 @@ public class MovingPlatform : MonoBehaviour
     private float timer;
     private float duration = 3;
     public static float SpeedModifier = 0;
+    public Countdown countdown;
 
     private void Start()
     {
         platformRb = GetComponent<Rigidbody>();
-        moveSpeed= Random.Range(4, 10); // Speed at which the platform moves
+        moveSpeed = Random.Range(4, 10); // Speed at which the platform moves
         minX = Random.Range(-8, 0);
         maxX = Random.Range(0, 8); //Values of min and Max position being declared as random
+
+        countdown = FindAnyObjectByType<Countdown>();
     }
 
 
@@ -34,7 +37,7 @@ public class MovingPlatform : MonoBehaviour
         // Move the platform back and forth
         if (movingRight)
         {
-            platformRb.MovePosition(platformRb.position + Vector3.right * (moveSpeed+SpeedModifier) * Time.deltaTime);
+            platformRb.MovePosition(platformRb.position + Vector3.right * (moveSpeed + SpeedModifier) * Time.deltaTime);
 
             if (transform.position.x >= maxX)
             {
@@ -43,7 +46,7 @@ public class MovingPlatform : MonoBehaviour
         }
         else
         {
-            platformRb.MovePosition(platformRb.position + Vector3.left * (moveSpeed+SpeedModifier) * Time.deltaTime);
+            platformRb.MovePosition(platformRb.position + Vector3.left * (moveSpeed + SpeedModifier) * Time.deltaTime);
 
             if (transform.position.x <= minX)
             {
@@ -56,8 +59,8 @@ public class MovingPlatform : MonoBehaviour
         }
 
 
-            // Keep track of the new position / reset the variable
-            lastPosition = platformRb.position;
+        // Keep track of the new position / reset the variable
+        lastPosition = platformRb.position;
     }
 
     // Will continue to work as long as the platform and player are touching
@@ -77,12 +80,12 @@ public class MovingPlatform : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         timer = 0;
-        
+
 
     }
     void Crumble()
     {
-        
+
 
         timer += Time.deltaTime;
         if (timer > duration)
@@ -90,7 +93,11 @@ public class MovingPlatform : MonoBehaviour
             movingDown = true;
 
         }
-        
+        countdown.UpdateCountdownText(duration - timer);
+
     }
+
 }
+
+
 

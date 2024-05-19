@@ -5,7 +5,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    private int score = 0;
+    private float score = 0;
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     // Method to increment the score
-    public void IncrementScore(int points)
+    public void IncrementScore(float points)
     {
         score += points;
         UpdateScoreText();
@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour
      // Method to save the score to PlayerPrefs
      void SaveScore()
     {
-        PlayerPrefs.SetInt("Score", score);
+        PlayerPrefs.SetFloat("Score", score);
     }
 
     // Method to load the score from PlayerPrefs

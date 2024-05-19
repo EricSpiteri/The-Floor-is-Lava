@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 public class PlayerControls : MonoBehaviour{
 
     //declaring physics variables and assigning their values
     public float speed = 8;
+    public float currentSpeed;
     public float jumpforce = 15;
     public float CurrentJumpforce;
-     public int points = 1;
+     public float points = 1;
     Vector3 StartingPosition;
 
      private AudioSource source;
@@ -30,6 +32,7 @@ public class PlayerControls : MonoBehaviour{
         source = GetComponent<AudioSource>();
         StartingPosition = playerRb.position;
         CurrentJumpforce = jumpforce;
+        currentSpeed = speed;
 
     }
 
@@ -37,12 +40,14 @@ public class PlayerControls : MonoBehaviour{
     {
         playerRb.MovePosition(StartingPosition);
         CurrentJumpforce = jumpforce;
+        currentSpeed = speed;
     }
 
     //what happens after initialisation
 
     void Update()
     {
+        
   
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -50,9 +55,9 @@ public class PlayerControls : MonoBehaviour{
         Vector3 direction = Vector3.zero;
         if (Grounded == true)
         {
-            direction = new Vector3(horizontal, 0, vertical).normalized * speed;
+            direction = new Vector3(horizontal, 0, vertical).normalized * currentSpeed;
         }
-        else { direction = new Vector3(horizontal, 0, vertical).normalized * speed*0.5f; }
+        else { direction = new Vector3(horizontal, 0, vertical).normalized * currentSpeed; }
         
         direction.y = playerRb.velocity.y;
 
@@ -78,7 +83,7 @@ public class PlayerControls : MonoBehaviour{
         if (collision.gameObject.CompareTag("Platform"))
         {
             MovingPlatform.SpeedModifier = 0;
-            CurrentJumpforce+=1.5f;
+            CurrentJumpforce+= 2*(points);
             FindObjectOfType<ScoreManager>().IncrementScore(points);
         }
     }
@@ -94,7 +99,8 @@ public class PlayerControls : MonoBehaviour{
 
         if (collision.gameObject.CompareTag("Platform"))
         {
-            MovingPlatform.SpeedModifier = -3;
+            MovingPlatform.SpeedModifier -= points;
+            currentSpeed-= 0.5f*(points);
             
 
         }

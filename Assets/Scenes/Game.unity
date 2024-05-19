@@ -638,8 +638,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &246389904
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -700,7 +700,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.1, y: 3, z: -36.44}
-  m_LocalScale: {x: 5.2687, y: 1, z: 4.1567}
+  m_LocalScale: {x: 4.082083, y: 1, z: 3.2283428}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -850,8 +850,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &520934163
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -912,7 +912,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4, y: 3, z: 0}
-  m_LocalScale: {x: 5.2687, y: 1, z: 4.1567}
+  m_LocalScale: {x: 6.923072, y: 1, z: 4.1567}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1043,8 +1043,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &534258748
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1105,7 +1105,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 3, z: -21.11}
-  m_LocalScale: {x: 5.2687, y: 1, z: 4.1567}
+  m_LocalScale: {x: 3.5469418, y: 1, z: 3.0193853}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1335,8 +1335,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &759030318
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1397,7 +1397,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.17, y: 8.96, z: -58.87}
-  m_LocalScale: {x: 5.2687, y: 1, z: 4.1567}
+  m_LocalScale: {x: 3.231294, y: 1, z: 3.0086195}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1892,7 +1892,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 65
+  field of view: 80.6
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2428,6 +2428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  currentSpeed: 0
   jumpforce: 15
   CurrentJumpforce: 0
   points: 1
@@ -2682,8 +2683,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1161360689
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2744,7 +2745,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.69, y: 3, z: -12.91}
-  m_LocalScale: {x: 5.2687, y: 1, z: 4.1567}
+  m_LocalScale: {x: 3.3239703, y: 1, z: 4.1567}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3489,8 +3490,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1741724406
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3551,7 +3552,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 3, z: -6.32}
-  m_LocalScale: {x: 5.2687, y: 1, z: 4.1567}
+  m_LocalScale: {x: 5.2687, y: 1, z: 5.9922986}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3776,8 +3777,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &1905083561
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3838,7 +3839,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8, y: 3, z: -30.29}
-  m_LocalScale: {x: 5.2687, y: 1, z: 4.1567}
+  m_LocalScale: {x: 3.1537893, y: 1, z: 2.58713}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3926,8 +3927,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &2021578962
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3988,7 +3989,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.17, y: 6.55, z: -51.94}
-  m_LocalScale: {x: 5.2687, y: 1, z: 4.1567}
+  m_LocalScale: {x: 3.7231693, y: 1, z: 2.9866304}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4217,8 +4218,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!23 &2134947293
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4279,7 +4280,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.17, y: 5.06, z: -45.17}
-  m_LocalScale: {x: 5.2687, y: 1, z: 4.1567}
+  m_LocalScale: {x: 3.6209757, y: 1, z: 3.5244246}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

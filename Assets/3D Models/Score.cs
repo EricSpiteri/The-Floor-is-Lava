@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
     // Method to increment the score
     public void IncrementScore(float points)
     {
+
         score += points;
         UpdateScoreText();
     }

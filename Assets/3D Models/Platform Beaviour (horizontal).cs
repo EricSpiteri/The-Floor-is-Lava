@@ -4,7 +4,7 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
 
-    public float moveSpeed;
+    public static float moveSpeed;
     public float minX;
     public float maxX;  // Minimum and maximum X positions, randomly generated
 
@@ -15,13 +15,13 @@ public class MovingPlatform : MonoBehaviour
     private Vector3 lastMove; // The number of units moved between updates
     private float timer;
     private float duration = 3;
-    public static float SpeedModifier = 0;
+    public static float SpeedModifier =0;
     public Countdown countdown;
 
     private void Start()
     {
         platformRb = GetComponent<Rigidbody>();
-        moveSpeed = Random.Range(4, 10); // Speed at which the platform moves
+        moveSpeed = Random.Range(6, 12); // Speed at which the platform moves
         minX = Random.Range(-8, 0);
         maxX = Random.Range(0, 8); //Values of min and Max position being declared as random
 

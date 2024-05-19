@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,11 +9,13 @@ using UnityEngine.SocialPlatforms.Impl;
 public class PlayerControls : MonoBehaviour{
 
     //declaring physics variables and assigning their values
-    public float speed = 8;
-    public float currentSpeed;
-    public float jumpforce = 15;
-    public float CurrentJumpforce;
-     public float points = 1;
+    public static float speed = 8;
+    public static float currentSpeed;
+
+    public static float jumpforce = 15;
+    public static float CurrentJumpforce = 1;
+     public float points = 0;
+     public float temppoints = 1;
     Vector3 StartingPosition;
 
      private AudioSource source;
@@ -41,6 +44,7 @@ public class PlayerControls : MonoBehaviour{
         playerRb.MovePosition(StartingPosition);
         CurrentJumpforce = jumpforce;
         currentSpeed = speed;
+        temppoints = 1;
     }
 
     //what happens after initialisation
@@ -83,8 +87,10 @@ public class PlayerControls : MonoBehaviour{
         if (collision.gameObject.CompareTag("Platform"))
         {
             MovingPlatform.SpeedModifier = 0;
-            CurrentJumpforce+= 2*(points);
+            CurrentJumpforce+= 2*(temppoints);
             FindObjectOfType<ScoreManager>().IncrementScore(points);
+
+            
         }
     }
 
@@ -99,8 +105,9 @@ public class PlayerControls : MonoBehaviour{
 
         if (collision.gameObject.CompareTag("Platform"))
         {
-            MovingPlatform.SpeedModifier -= points;
-            currentSpeed-= 0.5f*(points);
+            MovingPlatform.SpeedModifier = -5*temppoints;
+            currentSpeed-= 0.5f*temppoints;
+            
             
 
         }

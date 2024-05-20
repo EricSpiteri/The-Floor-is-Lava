@@ -588,7 +588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a5aa24008807448b06e931048d0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
   minX: -8
   maxX: 8
   countdown: {fileID: 0}
@@ -956,7 +955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a5aa24008807448b06e931048d0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
   minX: -8
   maxX: 8
   countdown: {fileID: 0}
@@ -993,7 +991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a5aa24008807448b06e931048d0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
   minX: -8
   maxX: 8
   countdown: {fileID: 0}
@@ -1285,7 +1282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a5aa24008807448b06e931048d0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
   minX: -8
   maxX: 8
   countdown: {fileID: 0}
@@ -2427,11 +2423,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8ccfbaa457ec5419fcc0615682f79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  currentSpeed: 0
-  jumpforce: 15
-  CurrentJumpforce: 0
   points: 1
+  temppoints: 1
+--- !u!95 &1018083672
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018083664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 82e575599256ad74eb867a78e686a10f, type: 3}
+  m_Controller: {fileID: 9100000, guid: 02036545ee834704d9935cb66a252efc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1078361291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,7 +2803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a5aa24008807448b06e931048d0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
   minX: -8
   maxX: 8
   countdown: {fileID: 0}
@@ -3201,11 +3214,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100154, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: SkeletonOutlaw - LOD1
       objectReference: {fileID: 0}
     - target: {fileID: 100154, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 400138, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400138, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.083
+      objectReference: {fileID: 0}
+    - target: {fileID: 400138, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400154, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3246,6 +3271,54 @@ PrefabInstance:
     - target: {fileID: 400154, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400154, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400156, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400158, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400160, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400162, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400164, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400166, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400168, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400170, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400172, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400174, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400176, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13700020, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3301,6 +3374,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100154, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1018083671}
+    - targetCorrespondingSourceObject: {fileID: 100154, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1018083672}
   m_SourcePrefab: {fileID: 100100000, guid: a3f2bf24dc927464a8b47e5e9102c809, type: 3}
 --- !u!1 &1611504538
 GameObject:
@@ -3596,7 +3672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a5aa24008807448b06e931048d0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
   minX: 0
   maxX: 10
   countdown: {fileID: 0}
@@ -3727,7 +3802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a5aa24008807448b06e931048d0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
   minX: -8
   maxX: 8
   countdown: {fileID: 0}
@@ -3877,7 +3951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a5aa24008807448b06e931048d0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
   minX: -8
   maxX: 8
   countdown: {fileID: 0}
@@ -4168,7 +4241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a5aa24008807448b06e931048d0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
   minX: -8
   maxX: 8
   countdown: {fileID: 0}

@@ -1,4 +1,5 @@
 
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,13 +15,15 @@ public class PlayerControls : MonoBehaviour{
 
     public static float jumpforce = 15;
     public static float CurrentJumpforce = 1;
-     public float points = 0;
-     public float temppoints = 1;
+     public static float points = 1;
+     public static float temppoints = 1;
     Vector3 StartingPosition;
 
      private AudioSource source;
 
-     
+    Animator PlayerAnim;
+
+
 
     //declaring RigidBody
     private Rigidbody playerRb;
@@ -52,16 +55,19 @@ public class PlayerControls : MonoBehaviour{
     void Update()
     {
         
-  
+        PlayerAnim =  GetComponentInChildren <Animator>();
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
 
         Vector3 direction = Vector3.zero;
         if (Grounded == true)
         {
+            
             direction = new Vector3(horizontal, 0, vertical).normalized * currentSpeed;
         }
-        else { direction = new Vector3(horizontal, 0, vertical).normalized * currentSpeed; }
+        else { direction = new Vector3(horizontal, 0, vertical).normalized * currentSpeed;
+            
+        }
         
         direction.y = playerRb.velocity.y;
 
@@ -72,9 +78,10 @@ public class PlayerControls : MonoBehaviour{
         {
             playerRb.AddForce(Vector3.up * CurrentJumpforce, ForceMode.Impulse);
             source.Play();
-            
-            
-        } 
+        }
+
+        PlayerAnim.SetBool("Run", Grounded && playerRb.velocity.magnitude>0);
+        PlayerAnim.SetBool("Jump", !Grounded);
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -82,6 +89,7 @@ public class PlayerControls : MonoBehaviour{
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             Grounded = true;
+
         }
 
         if (collision.gameObject.CompareTag("Platform"))

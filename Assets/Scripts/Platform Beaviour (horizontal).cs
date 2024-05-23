@@ -5,8 +5,8 @@ public class MovingPlatform : MonoBehaviour
 {
 
     public static float moveSpeed;
-    public float minX;
-    public float maxX;  // Minimum and maximum X positions, randomly generated
+    public static float minX;
+    public static float maxX;  // Minimum and maximum X positions, randomly generated
 
     private bool movingRight = true;
     private bool movingDown = false;

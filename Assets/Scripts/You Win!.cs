@@ -18,6 +18,11 @@ public class Winning : MonoBehaviour// used to attach a script to a game object
         {
             PlayerControls Controls = other.GetComponent<PlayerControls>();
             Controls.ResetPosition();
+            MovingPlatform.moveSpeed = Random.Range(6, 12); // Resetting random Values
+            MovingPlatform.minX = Random.Range(-8, 0);
+            MovingPlatform.maxX = Random.Range(0, 8);
+ 
+
 
             Debug.Log("You Win");
             
